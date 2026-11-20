@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TerminFiks · Brand book v1</title>
+<!-- Online: fonts load from Google Fonts. Offline render: the @font-face rules below point at local files. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Unbounded:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  
+  :root { --ink:#14161C; --foam:#F6F1E8; --orange:#F2541B; --steel:#6B7080; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { width: 1600px; background: var(--foam); color: var(--ink);
+         font-family: "Inter", "Inter Local", system-ui, sans-serif; }
+  .page { padding: 84px 96px 72px; }
+  h1, h2, .display { font-family: "Unbounded", "Unbounded Local", sans-serif; }
+  header { display: flex; justify-content: space-between; align-items: flex-end;
+           border-bottom: 3px solid var(--ink); padding-bottom: 28px; }
+  header h1 { font-size: 64px; font-weight: 800; letter-spacing: -1px; }
+  header h1 span { color: var(--orange); }
+  header .meta { text-align: right; font-size: 20px; color: var(--steel); line-height: 1.5; }
+  .tagline { margin-top: 30px; display: flex; gap: 28px; align-items: baseline; }
+  .tagline .sq { font-family: "Unbounded", "Unbounded Local"; font-weight: 600; font-size: 40px; }
+  .tagline .en { font-size: 22px; color: var(--steel); }
+  section { margin-top: 56px; }
+  h2 { font-size: 18px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+       color: var(--steel); margin-bottom: 20px; }
+  .logos { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .logo-card { border-radius: 28px; height: 300px; display: flex; align-items: center;
+               justify-content: center; position: relative; }
+  .logo-card img { width: 78%; }
+  .logo-card .label { position: absolute; left: 28px; bottom: 20px; font-size: 16px;
+                      letter-spacing: 1px; text-transform: uppercase; }
+  .on-light { background: #FFFFFF; border: 2px solid #E6DFD2; }
+  .on-light .label { color: var(--steel); }
+  .on-dark { background: var(--ink); }
+  .on-dark .label { color: #A9ADB8; }
+  .marks { display: grid; grid-template-columns: 420px 1fr; gap: 28px; margin-top: 28px; }
+  .mark-card { background: #FFFFFF; border: 2px solid #E6DFD2; border-radius: 28px; height: 220px;
+               display: flex; align-items: center; justify-content: center; gap: 28px; }
+  .mark-card img { height: 140px; }
+  .rules { background: #FFFFFF; border: 2px solid #E6DFD2; border-radius: 28px; padding: 26px 32px;
+           font-size: 19px; line-height: 1.55; }
+  .rules b { font-weight: 700; }
+  .swatches { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .swatch { border-radius: 28px; overflow: hidden; border: 2px solid #E6DFD2; background: #FFFFFF; }
+  .swatch .chip { height: 190px; display: flex; align-items: flex-end; padding: 22px 26px;
+                  font-family: "Unbounded", "Unbounded Local"; font-weight: 800; font-size: 30px; }
+  .swatch .info { padding: 20px 26px 24px; font-size: 19px; line-height: 1.6; }
+  .swatch .hex { font-family: "Unbounded", "Unbounded Local"; font-weight: 600; font-size: 24px; }
+  .fonts { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .font-card { background: #FFFFFF; border: 2px solid #E6DFD2; border-radius: 28px; padding: 30px 34px; }
+  .font-card .name { font-size: 18px; color: var(--steel); letter-spacing: 1px; text-transform: uppercase; }
+  .font-card .big { font-size: 88px; line-height: 1.1; margin: 10px 0 6px; }
+  .font-card .sample { font-size: 22px; line-height: 1.5; }
+  .font-card .use { margin-top: 14px; font-size: 18px; color: var(--steel); }
+  .unb { font-family: "Unbounded", "Unbounded Local"; }
+  .voice { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; }
+  .voice .words { grid-column: 1 / 2; background: var(--ink); color: var(--foam); border-radius: 28px;
+                  padding: 30px 34px; }
+  .voice .words .w { font-family: "Unbounded", "Unbounded Local"; font-weight: 800; font-size: 36px; line-height: 1.35; }
+  .voice .words .w span { color: var(--orange); }
+  .say { border-radius: 28px; padding: 30px 34px; font-size: 21px; line-height: 1.5; }
+  .say .tag { font-size: 16px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; margin-bottom: 12px; }
+  .say .q { font-family: "Unbounded", "Unbounded Local"; font-weight: 600; font-size: 25px; line-height: 1.4; }
+  .say .tr { margin-top: 12px; color: var(--steel); font-size: 18px; }
+  .yes { background: #FFFFFF; border: 3px solid var(--orange); }
+  .yes .tag { color: var(--orange); }
+  .no { background: #EDE7DC; border: 3px dashed #B9B2A6; }
+  .no .tag { color: #8A8478; }
+  .no .q { color: #6F6A60; }
+  footer { margin-top: 52px; display: flex; justify-content: space-between; font-size: 17px; color: var(--steel);
+           border-top: 2px solid #E0D8CA; padding-top: 22px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div>
+      <h1>termin<span>fiks</span></h1>
+    </div>
+    <div class="meta">Brand book v1<br>November 2026</div>
+  </header>
+
+  <div class="tagline">
+    <div class="sq">Karrigia plot. Telefoni në heshtje.</div>
+    <div class="en">“A full chair. A silent phone.”</div>
+  </div>
+
+  <section>
+    <h2>Logo</h2>
+    <div class="logos">
+      <div class="logo-card on-light"><img src="terminfiks-logo-light.svg" alt="TerminFiks logo on light"><div class="label">On light</div></div>
+      <div class="logo-card on-dark"><img src="terminfiks-logo-dark.svg" alt="TerminFiks logo on dark"><div class="label">On dark</div></div>
+    </div>
+    <div class="marks">
+      <div class="mark-card"><img src="terminfiks-symbol.svg" alt="Symbol"><img src="terminfiks-app-icon.svg" alt="App icon"></div>
+      <div class="rules">
+        <b>The symbol</b> is a clock face whose two hands make a check mark: <i>on time</i> and <i>confirmed</i>.
+        In the wordmark, <b>termin</b> takes the text colour and <b>fiks</b> is always orange.
+        Keep clear space of half the symbol around the logo. Never stretch it, recolour the symbol, or put the
+        logo on a busy photo. Below 120 px wide, use the symbol alone.
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Colours</h2>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#14161C;color:#F6F1E8">Ink</div>
+        <div class="info"><div class="hex">#14161C</div>RGB 20 22 28<br>Text, dark backgrounds, icons.</div></div>
+      <div class="swatch"><div class="chip" style="background:#F6F1E8;color:#14161C;border-bottom:2px solid #E6DFD2">Foam</div>
+        <div class="info"><div class="hex">#F6F1E8</div>RGB 246 241 232<br>Page background (like shaving foam).</div></div>
+      <div class="swatch"><div class="chip" style="background:#F2541B;color:#14161C">Fiks Orange</div>
+        <div class="info"><div class="hex">#F2541B</div>RGB 242 84 27<br>Buttons, the symbol, “fiks”. Ink text on it, never small orange text on Foam.</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Fonts</h2>
+    <div class="fonts">
+      <div class="font-card">
+        <div class="name">Headings · Unbounded (600 / 800)</div>
+        <div class="big unb" style="font-weight:800">Aa Ëë Çç</div>
+        <div class="sample unb" style="font-weight:600">Termini yt, fiks. 14:30</div>
+        <div class="use">Logo, headings, big numbers (times, prices). Free, Google Fonts.</div>
+      </div>
+      <div class="font-card">
+        <div class="name">Text · Inter (400 / 600)</div>
+        <div class="big" style="font-weight:600">Aa Ëë Çç</div>
+        <div class="sample">Zgjidh shërbimin, berberin dhe orën. Pa aplikacion, pa telefonata.</div>
+        <div class="use">Everything else: buttons, forms, WhatsApp texts. Free, Google Fonts.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Voice</h2>
+    <div class="voice">
+      <div class="words">
+        <div class="w">Direct<span>.</span></div>
+        <div class="w">Friendly<span>.</span></div>
+        <div class="w">Exact<span>.</span></div>
+      </div>
+      <div class="say yes">
+        <div class="tag">Sounds like us</div>
+        <div class="q">“Nesër në 14:30 te Arbeni. Vjen?”</div>
+        <div class="tr">“Tomorrow at 14:30 with Arben. Coming?”</div>
+      </div>
+      <div class="say no">
+        <div class="tag">Not us</div>
+        <div class="q">“Të nderuar klientë, ju njoftojmë se rezervimi juaj është regjistruar me sukses.”</div>
+        <div class="tr">“Dear customers, we hereby inform you that your reservation has been successfully registered.”</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>terminfiks.com · @terminfiks</div>
+    <div>Fonts: Unbounded &amp; Inter (SIL Open Font License)</div>
+  </footer>
+</div>
+</body>
+</html>
