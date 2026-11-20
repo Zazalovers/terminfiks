@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Front end build
+frontend/dist/
+
+# .NET build output
+bin/
+obj/
+*.user
+.vs/
+
+# SQLite database (created by the back end on start; never commit it)
+*.db
+*.db-shm
+*.db-wal
+*.db-journal
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/

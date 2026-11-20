@@ -1,0 +1,138 @@
+erDiagram
+    Shop ||--o{ StaffMember : "has"
+    Shop ||--o{ Service : "offers"
+    Shop ||--o{ OpeningHours : "is open"
+    Shop ||--o{ Customer : "owns data of"
+    Shop ||--o{ Booking : "has"
+    Shop ||--o{ Payment : "pays"
+    Shop |o--o{ WhatsAppMessage : "counts"
+    StaffMember ||--o{ TimeBlock : "blocks"
+    StaffMember ||--o{ Booking : "cuts"
+    StaffMember ||--o{ SlotHold : "held for"
+    Service ||--o{ Booking : "booked as"
+    Service ||--o{ SlotHold : "held as"
+    Customer |o--o{ Booking : "makes"
+    Booking |o--o{ WhatsAppMessage : "max 2 (R4)"
+
+    Shop {
+        int Id PK
+        string Slug UK
+        string Name
+        string City
+        string Address
+        string CountryCode
+        string TimeZone
+        string Phone
+        string InstagramHandle
+        string PhotoKey "S3 key"
+        string Status
+        int MinNoticeMinutes "R1"
+        int MaxDaysAhead "R1"
+        int CancelDeadlineHours "R3"
+        datetime ApprovedAt "R12"
+        datetime TrialEndsAt "R11"
+        datetime PaidUntil "R11"
+        datetime CreatedAt
+    }
+    StaffMember {
+        int Id PK
+        int ShopId FK
+        string FirstName
+        string Phone "UK per shop"
+        string Role "Owner or Barber"
+        bool TakesBookings
+        int SortOrder "R15"
+        bool IsActive
+        datetime CreatedAt
+    }
+    Service {
+        int Id PK
+        int ShopId FK
+        string Name
+        int DurationMinutes
+        int PriceCents "R10"
+        int SortOrder
+        bool IsActive
+    }
+    OpeningHours {
+        int Id PK
+        int ShopId FK
+        int DayOfWeek
+        time OpensAt
+        time ClosesAt
+    }
+    TimeBlock {
+        int Id PK
+        int StaffMemberId FK
+        datetime StartsAt
+        datetime EndsAt
+        string Reason
+        datetime CreatedAt
+    }
+    Customer {
+        int Id PK
+        int ShopId FK
+        string Phone "UK per shop, R8"
+        string FirstName "max 40, R8"
+        datetime BlockedUntil "R6"
+        datetime DeletionRequestedAt "R13"
+        datetime CreatedAt
+    }
+    Booking {
+        int Id PK
+        int ShopId FK
+        int StaffMemberId FK
+        int ServiceId FK
+        int CustomerId FK "null for walk-in"
+        string WalkInName
+        datetime StartsAt "UK with barber, R2"
+        datetime EndsAt
+        int DurationMinutes
+        int PriceCents
+        string Status
+        string Source
+        string CancelledBy
+        datetime CancelledAt
+        string ManageToken UK
+        datetime ReminderDueAt "R4"
+        datetime CreatedAt
+    }
+    SlotHold {
+        int Id PK
+        int StaffMemberId FK
+        int ServiceId FK
+        datetime StartsAt
+        datetime EndsAt
+        datetime ExpiresAt "R2, 5 min"
+        datetime CreatedAt
+    }
+    WhatsAppMessage {
+        int Id PK
+        int BookingId FK
+        int ShopId FK
+        string Template
+        string ToPhone
+        string Status
+        datetime ScheduledFor
+        datetime SentAt
+        string ProviderMessageId
+        datetime CreatedAt
+    }
+    LoginCode {
+        int Id PK
+        string Phone
+        string CodeHash
+        datetime ExpiresAt
+        datetime UsedAt
+        int Attempts
+        datetime CreatedAt
+    }
+    Payment {
+        int Id PK
+        int ShopId FK
+        date PeriodStart
+        date PeriodEnd
+        int AmountCents
+        datetime PaidAt
+        string Note
+    }

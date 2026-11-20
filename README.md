@@ -8,9 +8,23 @@
 
 *Karrigia plot. Telefoni në heshtje.* (A full chair. A silent phone.)
 
+## Start it (three commands)
+
+Needs Node 20+ and the .NET 10 SDK.
+
+```
+git clone https://github.com/Zazalovers/terminfiks.git && cd terminfiks
+npm install
+npm run dev
+```
+
+- Landing page: http://localhost:5173
+- Health check: http://localhost:5080/health → `{"status":"ok","database":"ok"}`
+- Database: `backend/TerminFiks.Api/terminfiks.db` (created on first start with all tables; open it with any SQLite viewer)
+
 ## Status
 
-Weekend 1: business, brand and rules. No code yet, on purpose: every build prompt starts from these docs.
+Weekend 1: business, brand and rules. Weekend 2: project frame (landing page, back end with `/health`, data models and first migration). No features yet.
 
 ## Docs
 
@@ -20,3 +34,5 @@ Weekend 1: business, brand and rules. No code yet, on purpose: every build promp
 | [`docs/brand-book.md`](docs/brand-book.md) | Name checks, tagline, logo, colours, fonts, tone of voice |
 | [`docs/brand/`](docs/brand/) | Logo files (SVG + PNG) and the one-page brand sheet |
 | [`docs/rules-and-flows.md`](docs/rules-and-flows.md) | Roles, the 3 main flows, business rules, WhatsApp messages, what v1 will NOT do |
+| [`docs/stack.md`](docs/stack.md) | Front end, back end, database, and why |
+| [`docs/data-model.md`](docs/data-model.md) | Tables, links and the diagram |
